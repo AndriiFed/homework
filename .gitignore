@@ -3,7 +3,7 @@
 *.jar
 
 # IntelliJ
-/out/*
+/out/
 /.idea/
 *.iws
 *.iml
