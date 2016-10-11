@@ -54,9 +54,10 @@ package pack.lessons;
 		} while (true);
 		
 		// Task #5 (Optional)
-		String bin = "1100111001";
+		String bin = "1100111002";
 		System.out.println("- Task #5 (Optional)");
-		System.out.println("Binary " + bin + " equals Decimal " + convert(bin));
+		int ans = convert(bin);
+		if (ans >= 0 ) System.out.println("Binary " + bin + " equals Decimal " + ans);
 	
 	}
 	
@@ -72,33 +73,33 @@ package pack.lessons;
 		} else return 2;                                                             // non-Leap Year 
 	}	
 
-  public static int convert(String binary) {
-	// binary = binary.trim(); // Trim spaces. Не учили еще.
-	char tmp = ' ';
-	int len = binary.length();
-	int sum = 0;
-	int stepen = 1;
-	
-	for (int j = 0; j <= len-1; j++) {
-		tmp = binary.charAt(len-1-j);
-		if ((tmp != '1') && (tmp != '0')) {       // Foolproof. Защита.
-			System.out.println("It is not binary, Dude! - " + " binary = " + binary);
-			return -1;
-		} else {
+	public static int convert(String binary) {
+		// binary = binary.trim(); // Trim spaces. Не учили еще.
+		char tmp = ' ';
+		int len = binary.length();
+		int sum = 0;
+		int stepen = 1;
 		
-		// sum = sum + tmp * (2 ^ j);  // Ohh.. I was C & C++...
-		if ('1' == tmp) {
-				stepen = 1;
-				for (int k = 0; k < j; k++) {  // В JAVA нет оператора возведения в степень??? Math.pow? Но мы не учили еще. Заменяем циклом.
-					stepen = stepen * 2;
-				}
-				sum = sum + stepen;
-				 //System.out.println("binary = " + binary + " j = " + j + " tmp = " + tmp + " stepen = " + stepen); // debug 
-		} // end of if ()
-		} // end of else 
-	} // end od for()
-	return sum;	
-  } // end of convert
+		for (int j = 0; j <= len-1; j++) {
+			tmp = binary.charAt(len-1-j);
+			if ((tmp != '1') && (tmp != '0')) {       // Foolproof. Защита.
+				System.out.println("It is not binary, Dude! - " + " your binary = " + binary);
+				return -1;
+			} else {
+			
+			// sum = sum + tmp * (2 ^ j);  // Ohh.. I was C & C++...
+			if ('1' == tmp) {
+					stepen = 1;
+					for (int k = 0; k < j; k++) {  // В JAVA нет оператора возведения в степень??? Math.pow? Но мы не учили еще. Заменяем циклом.
+						stepen = stepen * 2;
+					}
+					sum = sum + stepen;
+					 //System.out.println("binary = " + binary + " j = " + j + " tmp = " + tmp + " stepen = " + stepen); // debug 
+			} // end of if ()
+			} // end of else 
+		} // end od for()
+		return sum;	
+	} // end of convert
 	
 } // end of class Lesson2Variables
 
