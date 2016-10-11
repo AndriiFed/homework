@@ -54,7 +54,7 @@ package pack.lessons;
 		} while (true);
 		
 		// Task #5 (Optional)
-		String bin = "1100111002";
+		String bin = "1100111001";
 		System.out.println("- Task #5 (Optional)");
 		int ans = convert(bin);
 		if (ans >= 0 ) System.out.println("Binary " + bin + " equals Decimal " + ans);
