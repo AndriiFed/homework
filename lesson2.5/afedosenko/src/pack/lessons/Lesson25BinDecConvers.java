@@ -23,7 +23,7 @@ package pack.lessons;
 		String binary = "0011101110000";
 	
 		// Task #1
-		System.out.println("--- Task #1. Binary to Decimal. Positional Notation.");
+		System.out.println("\n--- Task #1. Binary to Decimal. Positional Notation.");
 		int ans = convertBinToDec1(binary);
 		if (ans >= 0 ) 
 			System.out.println("Binary " + binary + " equals Decimal " + ans);
@@ -31,7 +31,7 @@ package pack.lessons;
 			System.out.println("It is not binary, Dude! - " + " your binary = " + binary);
 		
 		// Task #2
-		System.out.println("--- Task #2. Binary to Decimal. Doubling.");
+		System.out.println("\n--- Task #2. Binary to Decimal. Doubling.");
 		ans = convertBinToDec2(binary);
 		if (ans >= 0 ) 
 			System.out.println("Binary " + binary + " equals Decimal " + ans);
@@ -75,7 +75,6 @@ package pack.lessons;
 		} // end of for()
 		return buf;	
 	} // end of convertBinToDec2()
-	
 	
 } // end of class Lesson25BinDecConvers
 

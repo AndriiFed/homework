@@ -1,81 +1,93 @@
 package pack.lessons;
 
- public class Lesson25BinDecConvers {
-	 
-	public static int power(int base, int pow) {
-		int result = 1;
-		for (int k = 0; k < pow; k++) {  // Заменяем циклом Math.pow().
-			result = result * base;
-		}
-		return result;
-	} // end of power()
-	
-	public static boolean isDigit(char ch) {
-		int digit = Character.getNumericValue(ch);
-		if (0 <= digit && digit <= 9)
-			return true;
-		else
-			return false;
-	}
-		 
-	public static void main(String[] args){
-		System.out.println("Andrey Fedosenko. Homework. Lesson2.5");
-		String binary = "0011101110000";
-	
-		// Task #1
-		System.out.println("--- Task #1. Binary to Decimal. Positional Notation.");
-		int ans = convertBinToDec1(binary);
-		if (ans >= 0 ) 
-			System.out.println("Binary " + binary + " equals Decimal " + ans);
-		else 		   
-			System.out.println("It is not binary, Dude! - " + " your binary = " + binary);
-		
-		// Task #2
-		System.out.println("--- Task #2. Binary to Decimal. Doubling.");
-		ans = convertBinToDec2(binary);
-		if (ans >= 0 ) 
-			System.out.println("Binary " + binary + " equals Decimal " + ans);
-		else 		   
-			System.out.println("It is not binary, Dude! - " + " your binary = " + binary);
-		
-	} // end of main()
-	
-	public static int convertBinToDec1(String binary) {
-		char tmp = ' ';
-		int len = binary.length();
-		int sum = 0;
-		
-		for (int j = 0; j <= len-1; j++) {
-			tmp = binary.charAt(len-1-j);
-			if ((tmp != '1') && (tmp != '0')) {       // Foolproof. Защита.
-				return -1;
-			} else {
-				if ('1' == tmp) {
-					sum = sum + power(2, j);
-				} // end of if ()
-			} // end of else 
-		} // end of for()
-		return sum;	
-	} // end of convertBinToDec1()
-	
-	public static int convertBinToDec2(String binary) {
-		char tmp = ' ';
-		int  len = binary.length();
-		int  buf = 0;
-				
-		for (int j = 0; j <= len-1; j++) {
-			tmp = binary.charAt(j);
-			if ((tmp != '1') && (tmp != '0')) {       // Foolproof. Защита.
-				return -1;
-			} else {
-				buf = buf * 2;
-				if ('1' == tmp)
-					buf = buf + 1; 
-			} // end of else 
-		} // end of for()
-		return buf;	
-	} // end of convertBinToDec2()
-	
-	
-} // end of class Lesson25BinDecConvers
+ public class Lesson25DecBinConvers {
 
+   public static int power(int base, int pow) {
+     int result = 1;
+     for (int k = 0; k < pow; k++) {
+       result = result * base;
+     }
+     return result;
+   } // end of power()
+
+   public static void main(String[] args){
+		System.out.println("Andrey Fedosenko. Homework. Lesson2.5");
+		int decimal = 2208;
+
+		// Task #3
+		System.out.println("\n--- Task #3. Decimal to Binary. Short Division by Two with Remainder.");
+		String ans = convertDecToBin1(decimal);
+		System.out.println("Decimal " + decimal + " equals Binary " + ans);
+
+		// Task #4
+    System.out.println("\n--- Task #4. Decimal to Binary. Descending Powers of Two and Subtraction.");
+    ans = convertDecToBin2(decimal);
+    System.out.println("Decimal " + decimal + " equals Binary " + ans);
+
+	} // end of main()
+
+	public static String convertDecToBin1(int decimal) {
+		int tmp = 0;
+		String sum = "";
+    String reverse = "";
+    while (true) {
+        tmp = decimal % 2;
+        decimal = decimal / 2;
+        if (tmp == 0)
+            sum = sum + "0";
+        else if (tmp == 1)
+              sum = sum + "1";
+        //System.out.println(tmp + " " + decimal); //debug
+        if (decimal == 0) break;
+    } // end of while
+
+    int len = sum.length();
+    for (int j = 0; j <= len - 1; j++) {
+        reverse = reverse + sum.charAt(len - j - 1);
+    }
+		return reverse;
+	} // end of convertDecToBin1()
+
+	public static String convertDecToBin2(int decimal) {
+    int  pow = getMaxPower(decimal);
+    int  buf = power(2, pow);
+    String binary = "";
+
+    //System.out.println("decimal = " + decimal + " buf = " + buf + " pow = " + pow); //debug
+    //System.out.println();
+
+    if (decimal != 0)
+        binary = binary + "1";
+    else
+        binary = binary + "0";
+
+    for (int j = pow - 1; j >= 0; j--) {
+          buf = decimal - power(2, getMaxPower(decimal));
+          // System.out.println("decimal = " + decimal + " buf = " + buf + " pow = " + j); //debug
+          if (power(2, j) > buf) {
+              binary = binary + "0";
+          }
+          else {
+              binary = binary + "1";
+              decimal = buf;
+          }
+    } // end of for()
+
+	  return binary;
+	} // end of convertBinToDec2()
+
+  public static int getMaxPower(int input) {
+    int  tmp = 0;
+    int  pow = 0;
+    while (true) {
+      if (power(2, pow + 1) > input) {
+          tmp = power(2, pow);
+          break;
+      }
+      else  pow++;
+    }
+    //System.out.println(buf);
+    return pow;
+  }
+
+} // end of class Lesson25BinDecConvers
