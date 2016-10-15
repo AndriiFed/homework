@@ -11,7 +11,7 @@ Binary 0011101110000 equals Decimal 1904
 
 ```
 
-``` terminal
+``` 
 $ javac -d out src/pack/lessons/Lesson25DecBinConvers.java && java -cp out pack.lessons.Lesson25DecBinConvers
 Andrey Fedosenko. Homework. Lesson2.5
 
