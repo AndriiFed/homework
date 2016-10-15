@@ -29,7 +29,7 @@ package pack.lessons;
 	public static String convertDecToBin1(int decimal) {
 		int tmp = 0;
 		String sum = "";
-    String reverse = "";
+    String binary = "";
     while (true) {
         tmp = decimal % 2;
         decimal = decimal / 2;
@@ -37,24 +37,20 @@ package pack.lessons;
             sum = sum + "0";
         else if (tmp == 1)
               sum = sum + "1";
-        //System.out.println(tmp + " " + decimal); //debug
         if (decimal == 0) break;
     } // end of while
 
     int len = sum.length();
     for (int j = 0; j <= len - 1; j++) {
-        reverse = reverse + sum.charAt(len - j - 1);
+        binary = binary + sum.charAt(len - j - 1);
     }
-		return reverse;
+		return binary;
 	} // end of convertDecToBin1()
 
 	public static String convertDecToBin2(int decimal) {
     int  pow = getMaxPower(decimal);
     int  buf = power(2, pow);
     String binary = "";
-
-    //System.out.println("decimal = " + decimal + " buf = " + buf + " pow = " + pow); //debug
-    //System.out.println();
 
     if (decimal != 0)
         binary = binary + "1";
@@ -63,7 +59,6 @@ package pack.lessons;
 
     for (int j = pow - 1; j >= 0; j--) {
           buf = decimal - power(2, getMaxPower(decimal));
-          // System.out.println("decimal = " + decimal + " buf = " + buf + " pow = " + j); //debug
           if (power(2, j) > buf) {
               binary = binary + "0";
           }
@@ -72,7 +67,6 @@ package pack.lessons;
               decimal = buf;
           }
     } // end of for()
-
 	  return binary;
 	} // end of convertBinToDec2()
 
@@ -81,12 +75,10 @@ package pack.lessons;
     int  pow = 0;
     while (true) {
       if (power(2, pow + 1) > input) {
-          tmp = power(2, pow);
           break;
       }
       else  pow++;
     }
-    //System.out.println(buf);
     return pow;
   }
 
