@@ -1,8 +1,7 @@
-# Andrii`s Fedosenko Homework
-### Lesson2.5
+## Lesson3
 
-#Домашнее задание:
-#1-я часть
+###Домашнее задание:
+###1-я часть
 >Побитовые операции используя bitwise operators - https://en.wikipedia.org/wiki/Bitwise_operation
 >Заполнить таблицу истинности для операторов & (AND), | (OR), ^ (XOR) и ~ (NOT). Скопируйте таблицу из этого файла, в README.md вашей директории с ДЗ для 3го урока
 
