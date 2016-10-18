@@ -26,20 +26,31 @@
 | n/a  | ~ | 0 | 1 |
 | n/a  | ~ | 1 | 0 |
 
-2-я часть
-Напишите класс `BitwiseCalc` и реализуйте следующие методы:
-
-```java
-public String and(String binaryLeft, String binaryRight)
-public String or(String binaryLeft, String binaryRight)
-public String xor(String binaryLeft, String binaryRight)
-public String not(String binary)
-```
-Напишите несколько примеров каждого метода использования в методе main.
-
+###2-я часть
+>Напишите класс `BitwiseCalc` и реализуйте следующие методы:
+>public String and(String binaryLeft, String binaryRight)
+>public String or(String binaryLeft, String binaryRight)
+>public String xor(String binaryLeft, String binaryRight)
+>public String not(String binary)
+>Напишите несколько примеров каждого метода использования в методе main.
 > Вы можете создать класс `BitwiseCalc`, добавить в него метод `main`, в котором можно будет получить инстанс `BitwiseCalc` используя оператор `new`.
 
-3-я часть
+```java
+$ javac -d out src/pack/lessons/BitwiseCalc.java  && java -cp out pack.lessons.BitwiseCalc
+Bitwise AND: 1 & 0 = 0
+Bitwise AND: 1101 & 1000 = 1000
+Another way for static AND: 1110010101 & 110011 = 10001
+Bitwise OR: 1 | 0 = 1
+Bitwise OR: 1101 | 1000 = 1101
+Bitwise OR: 1110010101 | 110011 = 1110110111
+Bitwise XOR: 1 | 0 = 1
+Bitwise XOR: 1101 | 1000 = 101
+Bitwise XOR: 1110010101 | 110011 = 1110100110
+Bitwise NOT: ~0 = 1
+Bitwise NOT: ~1011 = 0100
+```
+
+#3-я часть
 
 Напишите класс `FieldDefaultValuesExample` в отдельном классе, создайте в нем члены классов всех известных вам primitive типов при этом не инициализируя их. Добавьте и реализуйте метод `toString()` в котором выведите значения всех членов класса.
 
