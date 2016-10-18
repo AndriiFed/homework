@@ -29,17 +29,15 @@
 
 ###2-я часть
 Напишите класс `BitwiseCalc` и реализуйте следующие методы:
+public String and(String binaryLeft, String binaryRight)
 
->public String and(String binaryLeft, String binaryRight)
+public String or(String binaryLeft, String binaryRight)
 
->public String or(String binaryLeft, String binaryRight)
+public String xor(String binaryLeft, String binaryRight)
 
->public String xor(String binaryLeft, String binaryRight)
-
->public String not(String binary)
+public String not(String binary)
 
 Напишите несколько примеров каждого метода использования в методе main.
-
 Вы можете создать класс `BitwiseCalc`, добавить в него метод `main`, в котором можно будет получить инстанс `BitwiseCalc` используя оператор `new`.
 
 ```java
