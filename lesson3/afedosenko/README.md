@@ -3,6 +3,7 @@
 ###Домашнее задание:
 ###1-я часть
 Побитовые операции используя bitwise operators - https://en.wikipedia.org/wiki/Bitwise_operation
+
 Заполнить таблицу истинности для операторов & (AND), | (OR), ^ (XOR) и ~ (NOT). Скопируйте таблицу из этого файла, в README.md вашей директории с ДЗ для 3го урока
 
 | Left | Op | Right | Result |
@@ -28,11 +29,17 @@
 
 ###2-я часть
 Напишите класс `BitwiseCalc` и реализуйте следующие методы:
-public String and(String binaryLeft, String binaryRight)
-public String or(String binaryLeft, String binaryRight)
-public String xor(String binaryLeft, String binaryRight)
-public String not(String binary)
+
+>public String and(String binaryLeft, String binaryRight)
+
+>public String or(String binaryLeft, String binaryRight)
+
+>public String xor(String binaryLeft, String binaryRight)
+
+>public String not(String binary)
+
 Напишите несколько примеров каждого метода использования в методе main.
+
 Вы можете создать класс `BitwiseCalc`, добавить в него метод `main`, в котором можно будет получить инстанс `BitwiseCalc` используя оператор `new`.
 
 ```java
