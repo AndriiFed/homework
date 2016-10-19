@@ -38,7 +38,7 @@ public String not(String binary)
 Напишите несколько примеров каждого метода использования в методе main.
 Вы можете создать класс `BitwiseCalc`, добавить в него метод `main`, в котором можно будет получить инстанс `BitwiseCalc` используя оператор `new`.
 
-```java
+```sh
 $ javac -d out src/pack/lessons/BitwiseCalc.java  && java -cp out pack.lessons.BitwiseCalc
 Bitwise AND: 1 & 0 = 0
 Bitwise AND: 1101 & 1000 = 1000
@@ -56,8 +56,31 @@ Bitwise NOT: ~1011 = 0100
 ###3-я часть
 
 Напишите класс `FieldDefaultValuesExample` в отдельном классе, создайте в нем члены классов всех известных вам primitive типов при этом не инициализируя их. Добавьте и реализуйте метод `toString()` в котором выведите значения всех членов класса.
-
 В методе `main` создайте инстанс этого класса и выведите его содержимое используя `System.out.println()`
+
+```sh
+$ javac -d out/ src/pack/lessons/FieldValues.java && java -cp out/ pack.lessons.FieldValues
+--- Lesson3. Task 3. DefaultValues.
+--Default Values of primitive variables on class members:
+boolean: false
+char:
+byte: 0
+short: 0
+int: 0
+long: 0
+float: 0.0
+double: 0.0
+
+--Set values of primitive variables on class members:
+boolean: true
+char: A
+byte: 10
+short: 13
+int: 12223
+long: 12312546
+float: 0.13
+double: 15.1121212
+```
 
 4-я часть
 
