@@ -43,8 +43,7 @@ public class FieldValues {
     System.out.println(fielddefval.toString());
 
     System.out.println("--Set values of primitive variables on class members: ");
-    fielddefval.setParams(true, 'A', (byte)1, (short)13, 12223, 12312546, 0.13f, 15.1121212d);
+    fielddefval.setParams(true, 'A', (byte)10, (short)13, 12223, 12312546l, 0.13f, 15.1121212d);
     System.out.println(fielddefval.toString());
   }
-
 }
