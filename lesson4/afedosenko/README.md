@@ -9,6 +9,8 @@
 public void print() // печатает в консоль треугольник Паскаля
 public void print(String filter) // где переменная filter может быть "EVEN" или "ODD". Печатает треугольник Паскаля, заменяет четные или нечетные числа символами на ваше усмотрение, например пробел или `..`
 ```
+
+
 ```sh
 javac -d out/ -cp src/ src/MainProgramm.java  && java -cp out/ MainProgramm
 --- Andrey Fedosenko. Homework. Lesson 4.
@@ -57,6 +59,35 @@ public static void print(int[][] arr) // печатает двумерный м�
  [10,9, 8, 7]]
 ```
 
+```sh
+-- Part 1. ArraysUtils.
+1 2 3
+4 5 6
+
+1 2 3
+4 5 6
+Input arrays are EQUAL
+-- Part 1. ArraysUtils. Linearize.
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+-- Part 1. ArraysUtils. Transpose.
+1 2 3
+4 5 6
+7 8 9
+
+1 4 7
+2 5 8
+3 6 9
+-- Part 1. ArraysUtils. Spiral.
+1 2 3 4 5 6 7 8 9
+30 31 32 33 34 35 36 37 10
+29 52 53 54 55 56 57 38 11
+28 51 66 67 68 69 58 39 12
+27 50 65 72 71 70 59 40 13
+26 49 64 63 62 61 60 41 14
+25 48 47 46 45 44 43 42 15
+24 23 22 21 20 19 18 17 16
+```
+
 2-я часть
 
 - Придумайте и создайте два класса: `Book` и `Author` для "книжного магазина". Поля классов на ваше усмотрение. К примеру это может быть название и цена книги, имя и имейл автора. При создании класса `Book` учтите ситуацию, когда авторов книги может быть несколько.
@@ -64,3 +95,21 @@ public static void print(int[][] arr) // печатает двумерный м�
 - Напишите методы `equals` и `toString` для классов `Book` и `Author`.
 
 - Создайте класс Main, в котором будет метод main(String ...args). Cоздайте несколько экземпляров книг, авторов. Напишите примеры использования методов `equals` и `toString`.
+
+
+####Запуск программы с параметрами (можно добавлять книги с несколькими авторами парой параметров АВТОР(пробел)EMAIL):
+
+```sh
+$ javac -d out/ -cp src/ src/Main.java  && java -cp out/ Main "Osudy dobrého vojáka Švejka za světové války" 1921 "Jaroslav Hašek" jaroslav@writers.cz
+--- Andrey Fedosenko. Homework. Lesson 4.
+-- Part 2. Books and Authors.
+Ilya Ilf liya@writers.su
+Eugene Petrov eugene@writers.su
+The authors: Ilya Ilf liya@writers.su AND Eugene Petrov eugene@writers.su are not EQUAL.
+The authors: Eugene Petrov eugene@writers.su AND Eugene Petrov eugene@writers.su are EQUAL.
+BOOK: "The Little Golden Calf" YEAR: 1931 AUTHORS: Ilya Ilf liya@writers.su Eugene Petrov eugene@writers.su
+BOOK: "Odessa tales" YEAR: 1931 AUTHORS: Issaak Babel isaak@writers.su
+BOOK: "Osudy dobreho vojaka Svejka za svetove valky" YEAR: 1921 AUTHORS: Jaroslav Hasek jaroslav@writers.cz
+Book1 and Book2 are NOT EQUAL
+Book2 and Book4 are EQUAL
+```

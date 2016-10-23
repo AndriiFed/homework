@@ -11,6 +11,10 @@ public class TrianglePascal {
     this.height = height;
   }
 
+  public boolean isEven(int number) {
+      return (number % 2 == 0) ? true : false;
+  }
+
   public void fillTriangle(int height) {
     triangle[0] = new int[] {1};
     triangle[1] = new int[] {1, 1};
@@ -56,9 +60,9 @@ public class TrianglePascal {
               System.out.println("Not compatible filter!");
               return;
             }
-        }
-        System.out.println();
+          }
+          System.out.println();
+      }
     }
-  }
-
+    
 }
